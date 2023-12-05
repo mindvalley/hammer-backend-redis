@@ -27,7 +27,7 @@ Configure the `:hammer` application to use the Redis backend:
 config :hammer,
   backend: {Hammer.Backend.Redis, [delete_buckets_timeout: 10_0000,
                                    expiry_ms: 60_000 * 60 * 2,
-                                   key_prefix: "Connect:RateLimit",
+                                   key_prefix: "MyApp:RateLimit",
                                    redix_config: [host: "localhost",
                                                   port: 6379]]}
 ```
@@ -45,7 +45,7 @@ the redis_url will be used first.
 config :hammer,
   backend: {Hammer.Backend.Redis, [delete_buckets_timeout: 10_0000,
                                    expiry_ms: 60_000 * 60 * 2,
-                                   key_prefix: "Connect:RateLimit",
+                                   key_prefix: "MyApp:RateLimit",
                                    redis_url: "redis://HOST:PORT"]}
 ```
 
